@@ -1,0 +1,2 @@
+import { Component, type ErrorInfo, type ReactNode } from 'react'
+export class ErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> { state = { failed: false }; static getDerivedStateFromError() { return { failed: true } }; componentDidCatch(error: Error, info: ErrorInfo) { console.error(error, info) }; render() { return this.state.failed ? <section className="container page"><h1>Something went wrong.</h1><p>Refresh the page or return home to continue.</p></section> : this.props.children } }

@@ -1,0 +1,3 @@
+import { Settings2 } from 'lucide-react'
+import { isSupabaseConfigured } from '../lib/supabase'
+export function SetupNotice({ empty = false }: { empty?: boolean }) { if (isSupabaseConfigured && !empty) return null; return <aside className="setup"><Settings2 size={20}/><div><strong>{isSupabaseConfigured ? 'Your portfolio is ready for content.' : 'Connect Supabase to make this portfolio live.'}</strong><p>{isSupabaseConfigured ? 'Use the Admin area to create your profile and publish projects.' : 'Copy .env.example to .env.local, add your Supabase URL and anon key, then apply the SQL migration.'}</p></div></aside> }
