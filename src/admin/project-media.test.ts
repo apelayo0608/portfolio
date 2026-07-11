@@ -1,0 +1,1 @@
+import { expect,it } from 'vitest';import { projectImagePath } from './project-media';it('creates a safe image storage path',()=>expect(projectImagePath('Spark LMS','cover photo.png')).toBe('projects/spark-lms/cover-photo.png'))
